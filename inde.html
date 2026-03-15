@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FISIP Unjani – Universitas Jenderal Achmad Yani</title>
+<meta name="google-site-verification" content="SrTZawFSaLAONuV52vjH13dAEw3zOeO0J7W9G7wwpi8" />
+<link rel="icon" href="https://fisip.unjani.ac.id/wp-content/uploads/2024/06/cropped-Logo-fisip_art_favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://fisip.unjani.ac.id/wp-content/uploads/2024/06/cropped-Logo-fisip_art_favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://fisip.unjani.ac.id/wp-content/uploads/2024/06/cropped-Logo-fisip_art_favicon-180x180.png" />
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --red: #c0392b;
+    --dark-red: #96281b;
+    --gold: #d4a017;
+    --navy: #1a2744;
+    --dark-navy: #0f1a30;
+    --gray-bg: #f5f5f5;
+    --gray-text: #555;
+    --white: #fff;
+    --border: #e0e0e0;
+    --shadow: 0 2px 8px rgba(0,0,0,0.1);
+    --font: 'Open Sans', sans-serif;
+  }
+  body { font-family: var(--font); font-size: 14px; color: #333; background: #fff; }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    background: var(--dark-navy);
+    color: #ccc;
+    font-size: 12px;
+    padding: 6px 0;
+    border-bottom: 2px solid var(--red);
+  }
+  .top-bar-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .top-bar a { color: #ccc; margin-left: 14px; }
+  .top-bar a:hover { color: var(--gold); }
+  .top-bar-left { display: flex; align-items: center; gap: 6px; }
+  .top-bar-left span { font-size: 11px; }
+
+  /* ── HEADER LOGO AREA ── */
+  .header-logo {
+    background: var(--white);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  }
+  .header-logo-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo-block { display: flex; align-items: center; gap: 16px; }
+  .logo-emblem {
+    width: 80px; height: 80px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .logo-emblem img { width: 80px; height: 80px; object-fit: contain; }
+  .logo-text-block { line-height: 1.3; }
+  .logo-faculty {
+    font-size: 20px; font-weight: 700; color: var(--red);
+    letter-spacing: 0.3px; text-transform: uppercase;
+  }
+  .logo-university {
+    font-size: 13px; font-weight: 600; color: var(--navy);
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .logo-accred {
+    font-size: 11px; color: #888; margin-top: 2px;
+  }
+  .header-contact {
+    display: flex; gap: 20px; align-items: center;
+  }
+  .header-contact-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: var(--gray-text);
+  }
+  .header-contact-item .icon {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--red); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0;
+  }
+  .header-contact-item strong { display: block; font-size: 12px; color: #333; }
+
+  /* ── MAIN NAVIGATION ── */
+  .main-nav {
+    background: var(--red);
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: flex; align-items: stretch;
+  }
+  .nav-home {
+    background: var(--dark-red);
+    padding: 0 20px;
+    display: flex; align-items: center;
+    font-weight: 700; color: white; font-size: 13px;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .nav-home:hover { background: var(--dark-navy); }
+  .nav-items { display: flex; list-style: none; flex: 1; }
+  .nav-items > li {
+    position: relative;
+  }
+  .nav-items > li > a {
+    display: flex; align-items: center; gap: 5px;
+    padding: 0 16px; height: 46px;
+    color: white; font-size: 13px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.3px;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .nav-items > li > a:hover,
+  .nav-items > li.active > a {
+    background: rgba(0,0,0,0.2);
+  }
+  .nav-items > li > a .caret {
+    font-size: 9px; margin-left: 2px; opacity: 0.8;
+  }
+  /* dropdown */
+  .dropdown {
+    display: none;
+    position: absolute; top: 100%; left: 0;
+    background: white;
+    min-width: 220px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    border-top: 3px solid var(--red);
+    z-index: 200;
+  }
+  .dropdown li { list-style: none; }
+  .dropdown li a {
+    display: block; padding: 10px 18px;
+    font-size: 13px; color: #333;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background 0.15s, color 0.15s;
+  }
+  .dropdown li a:hover { background: var(--gray-bg); color: var(--red); padding-left: 24px; }
+  .nav-items > li:hover .dropdown { display: block; }
+  .nav-search {
+    margin-left: auto;
+    display: flex; align-items: center; padding: 0 14px;
+    border-left: 1px solid rgba(255,255,255,0.15);
+  }
+  .nav-search input {
+    background: rgba(255,255,255,0.15);
+    border: none; padding: 6px 10px;
+    border-radius: 3px 0 0 3px;
+    color: white; font-size: 12px; width: 160px;
+    outline: none;
+  }
+  .nav-search input::placeholder { color: rgba(255,255,255,0.6); }
+  .nav-search button {
+    background: var(--dark-red);
+    border: none; padding: 6px 10px;
+    border-radius: 0 3px 3px 0;
+    color: white; cursor: pointer; font-size: 12px;
+  }
+  .nav-search button:hover { background: var(--dark-navy); }
+
+  /* ── HERO SLIDER ── */
+  .hero-slider {
+    position: relative; overflow: hidden;
+    background: var(--dark-navy);
+    height: 440px;
+  }
+  .slide {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex; align-items: center;
+    opacity: 0; transition: opacity 0.8s ease;
+  }
+  .slide.active { opacity: 1; }
+  .slide-bg {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+  }
+  .slide-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(10,20,50,0.85) 0%, rgba(10,20,50,0.5) 60%, transparent 100%);
+  }
+  .slide-content {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto; padding: 0 40px;
+    color: white;
+  }
+  .slide-tag {
+    background: var(--red);
+    display: inline-block; padding: 4px 12px;
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 16px; border-radius: 2px;
+  }
+  .slide-title {
+    font-size: 34px; font-weight: 700; line-height: 1.25;
+    max-width: 600px; margin-bottom: 14px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+  .slide-subtitle {
+    font-size: 15px; opacity: 0.85; max-width: 500px;
+    line-height: 1.6; margin-bottom: 22px;
+  }
+  .slide-btn {
+    display: inline-block; padding: 10px 26px;
+    background: var(--red); color: white;
+    font-size: 13px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; border-radius: 3px;
+    transition: background 0.2s;
+  }
+  .slide-btn:hover { background: var(--dark-red); }
+  .slider-dots {
+    position: absolute; bottom: 18px; right: 40px;
+    display: flex; gap: 8px; z-index: 5;
+  }
+  .slider-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: rgba(255,255,255,0.4); cursor: pointer;
+    border: none; transition: background 0.2s;
+  }
+  .slider-dot.active { background: white; }
+  .slider-arrows {
+    position: absolute; bottom: 12px; left: 40px; z-index: 5;
+    display: flex; gap: 6px;
+  }
+  .slider-arrow {
+    width: 32px; height: 32px; border-radius: 3px;
+    background: rgba(255,255,255,0.15); color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 14px; transition: background 0.2s;
+  }
+  .slider-arrow:hover { background: var(--red); }
+
+  /* ── STATS TICKER ── */
+  .stats-bar {
+    background: var(--navy);
+    padding: 0;
+    display: flex; overflow: hidden;
+  }
+  .stats-label {
+    background: var(--red); color: white;
+    padding: 14px 22px;
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; white-space: nowrap;
+    display: flex; align-items: center; gap: 8px;
+    flex-shrink: 0;
+  }
+  .stats-items {
+    display: flex; flex: 1;
+    overflow: hidden;
+  }
+  .stats-item {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    gap: 12px; padding: 12px 20px;
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  .stats-number {
+    font-size: 22px; font-weight: 700; color: var(--gold);
+    line-height: 1;
+  }
+  .stats-desc { font-size: 11px; color: rgba(255,255,255,0.7); line-height: 1.4; }
+
+  /* ── MAIN CONTENT AREA ── */
+  .main-content {
+    max-width: 1200px; margin: 0 auto;
+    padding: 36px 20px;
+    display: grid; grid-template-columns: 1fr 340px;
+    gap: 30px;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 3px solid var(--red);
+    padding-bottom: 10px; margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 17px; font-weight: 700; color: var(--navy);
+    text-transform: uppercase; letter-spacing: 0.3px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-title::before {
+    content: ''; display: block;
+    width: 4px; height: 20px; background: var(--red);
+    border-radius: 2px;
+  }
+  .section-more {
+    font-size: 12px; color: var(--red); font-weight: 600;
+    padding: 4px 12px; border: 1px solid var(--red);
+    border-radius: 3px; transition: all 0.2s;
+  }
+  .section-more:hover { background: var(--red); color: white; }
+
+  /* ── NEWS GRID ── */
+  .news-featured {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 18px; margin-bottom: 20px;
+  }
+  .news-card {
+    background: white; border: 1px solid var(--border);
+    border-radius: 4px; overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+  }
+  .news-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+  .news-card-img {
+    height: 180px; background: var(--gray-bg);
+    overflow: hidden;
+  }
+  .news-card-img-placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px; color: #ccc;
+  }
+  .news-card-body { padding: 14px; }
+  .news-card-cat {
+    display: inline-block; background: var(--red); color: white;
+    font-size: 10px; font-weight: 700; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 2px; margin-bottom: 8px;
+    letter-spacing: 0.5px;
+  }
+  .news-card-title {
+    font-size: 13px; font-weight: 700; color: #222;
+    line-height: 1.5; margin-bottom: 8px;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .news-card-date { font-size: 11px; color: #999; }
+  .news-card-date::before { content: '📅 '; font-size: 10px; }
+
+  /* News list (below featured) */
+  .news-list { display: flex; flex-direction: column; gap: 12px; }
+  .news-list-item {
+    display: flex; gap: 12px; padding-bottom: 12px;
+    border-bottom: 1px dashed var(--border);
+    cursor: pointer;
+  }
+  .news-list-item:last-child { border-bottom: none; }
+  .news-list-img {
+    width: 90px; height: 70px; flex-shrink: 0;
+    background: var(--gray-bg); border-radius: 3px;
+    overflow: hidden; display: flex; align-items: center; justify-content: center;
+    font-size: 24px; color: #ccc;
+  }
+  .news-list-content {}
+  .news-list-title {
+    font-size: 13px; font-weight: 600; color: #222;
+    line-height: 1.45; margin-bottom: 5px;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .news-list-title:hover { color: var(--red); }
+  .news-list-meta { font-size: 11px; color: #999; }
+
+  /* ── SIDEBAR ── */
+  .sidebar { display: flex; flex-direction: column; gap: 24px; }
+  
+  /* Sidebar widget */
+  .widget { background: white; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .widget-header {
+    background: var(--navy); color: white;
+    padding: 12px 16px;
+    font-size: 13px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.4px; display: flex; align-items: center; gap: 8px;
+  }
+  .widget-header::before {
+    content: ''; display: block; width: 3px; height: 16px;
+    background: var(--gold); border-radius: 2px;
+  }
+  .widget-body { padding: 14px; }
+
+  /* Quick links */
+  .quick-links { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .quick-link {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; gap: 6px; padding: 14px 8px;
+    background: var(--gray-bg); border: 1px solid var(--border);
+    border-radius: 4px; text-align: center;
+    font-size: 11px; font-weight: 600; color: #444;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .quick-link:hover { background: var(--red); color: white; border-color: var(--red); }
+  .quick-link:hover .ql-icon { background: rgba(255,255,255,0.2); }
+  .ql-icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--red); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; transition: background 0.2s;
+  }
+
+  /* Events / Agenda */
+  .event-item {
+    display: flex; gap: 12px; padding: 10px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .event-item:last-child { border-bottom: none; }
+  .event-date-box {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: var(--red); color: white;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    border-radius: 4px;
+  }
+  .event-day { font-size: 16px; font-weight: 700; line-height: 1; }
+  .event-month { font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85; }
+  .event-info {}
+  .event-title { font-size: 12px; font-weight: 600; color: #222; line-height: 1.4; margin-bottom: 3px; }
+  .event-title:hover { color: var(--red); cursor: pointer; }
+  .event-place { font-size: 11px; color: #999; }
+
+  /* Gallery thumbnails */
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+  .gallery-thumb {
+    height: 70px; background: var(--gray-bg);
+    border-radius: 3px; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; color: #ccc; cursor: pointer;
+    transition: transform 0.2s; position: relative;
+  }
+  .gallery-thumb:hover { transform: scale(1.05); }
+  .gallery-thumb::after {
+    content: '🔍'; position: absolute;
+    font-size: 16px; opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .gallery-thumb:hover::after { opacity: 1; }
+
+  /* ── PROGRAM STUDI SECTION ── */
+  .prodi-section {
+    background: var(--gray-bg);
+    padding: 36px 0;
+    border-top: 3px solid var(--border);
+    border-bottom: 3px solid var(--border);
+  }
+  .prodi-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+  }
+  .prodi-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 16px; margin-top: 20px;
+  }
+  .prodi-card {
+    background: white; border-radius: 6px;
+    border: 1px solid var(--border);
+    padding: 24px 16px; text-align: center;
+    cursor: pointer; transition: all 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .prodi-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 4px; background: var(--red);
+  }
+  .prodi-card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transform: translateY(-4px);
+    border-color: var(--red);
+  }
+  .prodi-icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--red); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin: 0 auto 14px;
+  }
+  .prodi-name {
+    font-size: 13px; font-weight: 700; color: var(--navy);
+    line-height: 1.4; margin-bottom: 8px;
+  }
+  .prodi-level {
+    font-size: 11px; color: #999; margin-bottom: 10px;
+  }
+  .prodi-accred {
+    display: inline-block; background: #e8f5e9; color: #388e3c;
+    font-size: 10px; font-weight: 700; padding: 3px 10px;
+    border-radius: 12px; border: 1px solid #a5d6a7;
+  }
+
+  /* ── ANNOUNCEMENT TICKER ── */
+  .ticker-bar {
+    background: var(--navy); padding: 10px 0; overflow: hidden;
+  }
+  .ticker-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .ticker-label {
+    background: var(--gold); color: var(--dark-navy);
+    padding: 4px 12px; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    border-radius: 2px; white-space: nowrap; flex-shrink: 0;
+  }
+  .ticker-text-wrapper { overflow: hidden; flex: 1; }
+  .ticker-text {
+    color: rgba(255,255,255,0.85); font-size: 12px;
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+    display: inline-block;
+  }
+  @keyframes ticker {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+  }
+
+  /* ── DEAN WELCOME ── */
+  .dean-section {
+    background: var(--navy); color: white;
+    padding: 40px 0;
+  }
+  .dean-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: flex; align-items: center; gap: 40px;
+  }
+  .dean-photo {
+    width: 180px; height: 220px; flex-shrink: 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 6px; border: 3px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 60px;
+  }
+  .dean-content { flex: 1; }
+  .dean-label {
+    background: var(--red); display: inline-block;
+    padding: 4px 12px; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 14px; border-radius: 2px;
+  }
+  .dean-title { font-size: 24px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
+  .dean-subtitle { font-size: 13px; color: var(--gold); margin-bottom: 16px; font-weight: 600; }
+  .dean-text { font-size: 14px; line-height: 1.75; color: rgba(255,255,255,0.8); margin-bottom: 18px; }
+  .dean-btn {
+    display: inline-block; padding: 10px 24px;
+    border: 2px solid var(--gold); color: var(--gold);
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; border-radius: 3px;
+    transition: all 0.2s; cursor: pointer;
+  }
+  .dean-btn:hover { background: var(--gold); color: var(--navy); }
+
+  /* ── FOOTER ── */
+  .footer { background: var(--dark-navy); color: rgba(255,255,255,0.7); }
+  .footer-top {
+    padding: 36px 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px;
+  }
+  .footer-brand { }
+  .footer-logo-row {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+  }
+  .footer-emblem {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: rgba(255,255,255,0.1); border: 2px solid var(--gold);
+    display: flex; align-items: center; justify-content: center; font-size: 22px;
+  }
+  .footer-name { font-size: 15px; font-weight: 700; color: white; line-height: 1.3; }
+  .footer-name small { font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 400; display: block; }
+  .footer-desc { font-size: 12px; line-height: 1.7; margin-bottom: 14px; }
+  .footer-social { display: flex; gap: 8px; }
+  .social-btn {
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(255,255,255,0.1); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; cursor: pointer; transition: background 0.2s;
+  }
+  .social-btn:hover { background: var(--red); }
+  .footer-col-title {
+    font-size: 13px; font-weight: 700; color: white; text-transform: uppercase;
+    letter-spacing: 0.4px; margin-bottom: 14px;
+    padding-bottom: 8px; border-bottom: 2px solid var(--red);
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-links li a {
+    font-size: 12px; color: rgba(255,255,255,0.65);
+    transition: color 0.2s;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .footer-links li a::before { content: '›'; color: var(--red); font-size: 14px; font-weight: 700; }
+  .footer-links li a:hover { color: white; }
+  .footer-contact-item {
+    display: flex; align-items: flex-start; gap: 8px;
+    font-size: 12px; color: rgba(255,255,255,0.65); margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .footer-contact-item span:first-child { color: var(--gold); font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+  .footer-bottom {
+    padding: 16px 0; text-align: center;
+    font-size: 11px; color: rgba(255,255,255,0.4);
+  }
+  .footer-bottom a { color: var(--gold); }
+
+  /* ── RELATED LINKS BAR ── */
+  .related-links-bar {
+    background: #f0f0f0; border-top: 1px solid var(--border);
+    padding: 14px 0;
+  }
+  .related-links-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  }
+  .related-links-label {
+    font-size: 12px; font-weight: 700; color: #555;
+    text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap;
+  }
+  .related-link-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 5px 14px; background: white;
+    border: 1px solid var(--border); border-radius: 3px;
+    font-size: 11px; font-weight: 600; color: #444;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .related-link-btn:hover { background: var(--red); color: white; border-color: var(--red); }
+
+  /* Mobile */
+  @media (max-width: 900px) {
+    .header-contact { display: none; }
+    .main-content { grid-template-columns: 1fr; }
+    .prodi-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .dean-inner { flex-direction: column; text-align: center; }
+    .stats-items { overflow-x: auto; }
+    .news-featured { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .nav-items { display: none; }
+    .slide-title { font-size: 22px; }
+    .prodi-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-left">
+      <span>📅</span>
+      <span id="date-display">Minggu, 15 Maret 2026</span>
+    </div>
+    <div>
+      <a href="#">Portal Mahasiswa</a>
+      <a href="#">E-Learning</a>
+      <a href="#">E-Journal</a>
+      <a href="#">Website Unjani</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER LOGO -->
+<div class="header-logo">
+  <div class="header-logo-inner">
+    <div class="logo-block">
+      <div class="logo-emblem">
+        <img src="https://fisip.unjani.ac.id/wp-content/uploads/2024/06/cropped-cropped-Logo-fisip_art_favicon.png" alt="Logo FISIP Unjani">
+      </div>
+      <div class="logo-text-block">
+        <div class="logo-faculty">Fakultas Ilmu Sosial dan Ilmu Politik</div>
+        <div class="logo-university">Universitas Jenderal Achmad Yani</div>
+        <div class="logo-accred">Terakreditasi Institusi | Cimahi – Jawa Barat</div>
+      </div>
+    </div>
+    <div class="header-contact">
+      <div class="header-contact-item">
+        <div class="icon">📞</div>
+        <div>
+          <strong>(022) 6650645</strong>
+          <span>Senin – Jum'at, 08.00–16.00</span>
+        </div>
+      </div>
+      <div class="header-contact-item">
+        <div class="icon">✉</div>
+        <div>
+          <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="06606f756f764673686c67686f286765286f62">[email&#160;protected]</a></strong>
+          <span>Email Resmi FISIP Unjani</span>
+        </div>
+      </div>
+      <div class="header-contact-item">
+        <div class="icon">📍</div>
+        <div>
+          <strong>Jl. Terusan Jend. Sudirman</strong>
+          <span>Cimahi, Jawa Barat 40531</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN NAVIGATION -->
+<nav class="main-nav">
+  <div class="nav-inner">
+    <div class="nav-home">🏠 Beranda</div>
+    <ul class="nav-items">
+      <li>
+        <a href="#">Tentang Kami <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="#">Sambutan Dekan</a></li>
+          <li><a href="#">Profil Fakultas</a></li>
+          <li><a href="#">Visi &amp; Misi</a></li>
+          <li><a href="#">Pimpinan Fakultas</a></li>
+          <li><a href="#">Struktur Organisasi</a></li>
+          <li><a href="#">Dosen</a></li>
+          <li><a href="#">Tenaga Kependidikan</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Program Studi <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="#">Ilmu Pemerintahan (S1)</a></li>
+          <li><a href="#">Ilmu Hubungan Internasional (S1)</a></li>
+          <li><a href="#">Magister Ilmu Pemerintahan (S2)</a></li>
+          <li><a href="#">Magister Hubungan Internasional (S2)</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Akademik <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="#">Kalender Akademik</a></li>
+          <li><a href="#">Kurikulum</a></li>
+          <li><a href="#">Peraturan Akademik</a></li>
+          <li><a href="#">Panduan Skripsi/Tesis</a></li>
+          <li><a href="#">Siterpadu Mahasiswa</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Kemahasiswaan <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="#">Organisasi Mahasiswa</a></li>
+          <li><a href="#">Prestasi Mahasiswa</a></li>
+          <li><a href="#">Beasiswa</a></li>
+          <li><a href="#">Kegiatan Mahasiswa</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Penelitian &amp; PKM <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="#">Penelitian Dosen</a></li>
+          <li><a href="#">Pengabdian Masyarakat</a></li>
+          <li><a href="#">E-Jurnal</a></li>
+          <li><a href="#">Kerjasama</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Berita Terkini</a>
+      </li>
+      <li>
+        <a href="#">Galeri <span class="caret">▾</span></a>
+        <ul class="dropdown">
+          <li><a href="#">Galeri Foto</a></li>
+          <li><a href="#">Galeri Video</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Kontak</a>
+      </li>
+    </ul>
+    <div class="nav-search">
+      <input type="text" placeholder="Cari...">
+      <button>🔍</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SLIDER -->
+<div class="hero-slider" id="slider">
+  <div class="slide active">
+    <div class="slide-bg" style="background: linear-gradient(135deg, #1a2744 0%, #c0392b 100%);"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <div class="slide-tag">Berita Utama</div>
+      <div class="slide-title">FISIP Unjani dan SIKL Malaysia Teken MoA Pengabdian kepada Masyarakat</div>
+      <div class="slide-subtitle">Kuala Lumpur – Fakultas Ilmu Sosial dan Ilmu Politik Unjani resmi menandatangani Memorandum of Agreement dengan institusi mitra di Malaysia.</div>
+      <a href="#" class="slide-btn">Baca Selengkapnya</a>
+    </div>
+  </div>
+  <div class="slide">
+    <div class="slide-bg" style="background: linear-gradient(135deg, #0f1a30 0%, #1a2744 100%);"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <div class="slide-tag">Kerjasama Internasional</div>
+      <div class="slide-title">Unjani Teken MoU dengan PCI Muslimat NU Malaysia di Kuala Lumpur</div>
+      <div class="slide-subtitle">Universitas Jenderal Achmad Yani resmi menandatangani nota kesepahaman dengan PCI Muslimat Nahdlatul Ulama di Kuala Lumpur.</div>
+      <a href="#" class="slide-btn">Baca Selengkapnya</a>
+    </div>
+  </div>
+  <div class="slide">
+    <div class="slide-bg" style="background: linear-gradient(135deg, #96281b 0%, #1a2744 100%);"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-content">
+      <div class="slide-tag">Akademik</div>
+      <div class="slide-title">Pemaparan Kurikulum OBE Program Studi Ilmu Pemerintahan FISIP Unjani</div>
+      <div class="slide-subtitle">Program Studi Ilmu Pemerintahan dan Magister Ilmu Pemerintahan FISIP Unjani menggelar pemaparan materi kurikulum berbasis OBE.</div>
+      <a href="#" class="slide-btn">Baca Selengkapnya</a>
+    </div>
+  </div>
+  <div class="slider-arrows">
+    <div class="slider-arrow" onclick="prevSlide()">&#8249;</div>
+    <div class="slider-arrow" onclick="nextSlide()">&#8250;</div>
+  </div>
+  <div class="slider-dots">
+    <button class="slider-dot active" onclick="goSlide(0)"></button>
+    <button class="slider-dot" onclick="goSlide(1)"></button>
+    <button class="slider-dot" onclick="goSlide(2)"></button>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-label">📊 Data FISIP</div>
+  <div class="stats-items">
+    <div class="stats-item">
+      <div>
+        <div class="stats-number">4</div>
+        <div class="stats-desc">Program<br>Studi</div>
+      </div>
+    </div>
+    <div class="stats-item">
+      <div>
+        <div class="stats-number">2.400+</div>
+        <div class="stats-desc">Mahasiswa<br>Aktif</div>
+      </div>
+    </div>
+    <div class="stats-item">
+      <div>
+        <div class="stats-number">65+</div>
+        <div class="stats-desc">Dosen<br>Pengajar</div>
+      </div>
+    </div>
+    <div class="stats-item">
+      <div>
+        <div class="stats-number">12.000+</div>
+        <div class="stats-desc">Alumni<br>Tersebar</div>
+      </div>
+    </div>
+    <div class="stats-item">
+      <div>
+        <div class="stats-number">30+</div>
+        <div class="stats-desc">Kerjasama<br>Internasional</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-inner">
+    <span class="ticker-label">📢 Pengumuman</span>
+    <div class="ticker-text-wrapper">
+      <span class="ticker-text">
+        Pendaftaran Sidang Skripsi Semester Genap 2025/2026 &nbsp;|&nbsp; 
+        Jadwal Ujian Akhir Semester Genap TA 2025/2026 telah tersedia &nbsp;|&nbsp; 
+        Pengumpulan KRS Semester Genap 2025/2026 &nbsp;|&nbsp; 
+        FISIP Unjani membuka pendaftaran mahasiswa baru jalur reguler &nbsp;|&nbsp; 
+        Seminar Internasional HI FISIP Unjani akan diselenggarakan bulan April 2026
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+  <!-- LEFT / CENTER -->
+  <div>
+    <!-- News Section -->
+    <div class="section-header">
+      <span class="section-title">Berita Terkini</span>
+      <a href="#" class="section-more">Lihat Semua →</a>
+    </div>
+
+    <div class="news-featured">
+      <div class="news-card">
+        <div class="news-card-img">
+          <div class="news-card-img-placeholder" style="background: linear-gradient(135deg,#c0392b,#1a2744); color: rgba(255,255,255,0.3); font-size: 60px;">🌏</div>
+        </div>
+        <div class="news-card-body">
+          <span class="news-card-cat">Kerjasama</span>
+          <div class="news-card-title">FISIP Unjani dan SIKL Malaysia Teken MoA Pengabdian kepada Masyarakat di Kuala Lumpur</div>
+          <div class="news-card-date">27 Agustus 2025</div>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-card-img">
+          <div class="news-card-img-placeholder" style="background: linear-gradient(135deg,#1a2744,#c0392b); color: rgba(255,255,255,0.3); font-size: 60px;">🤝</div>
+        </div>
+        <div class="news-card-body">
+          <span class="news-card-cat">Internasional</span>
+          <div class="news-card-title">Unjani Teken MoU dengan PCI Muslimat NU Malaysia di Kuala Lumpur</div>
+          <div class="news-card-date">26 Agustus 2025</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-list">
+      <div class="news-list-item">
+        <div class="news-list-img" style="background: linear-gradient(135deg,#f5f5f5,#e0e0e0); font-size:28px;">🌐</div>
+        <div class="news-list-content">
+          <div class="news-list-title">FISIP Unjani Gelar Pengabdian Kepada Masyarakat Internasional di Malaysia</div>
+          <div class="news-list-meta">📅 25 Agustus 2025 &nbsp;|&nbsp; Kerjasama</div>
+        </div>
+      </div>
+      <div class="news-list-item">
+        <div class="news-list-img" style="background: linear-gradient(135deg,#f5f5f5,#e0e0e0); font-size:28px;">📚</div>
+        <div class="news-list-content">
+          <div class="news-list-title">Pemaparan Materi Kurikulum OBE Prodi HI dan MHI FISIP Unjani</div>
+          <div class="news-list-meta">📅 29 November 2025 &nbsp;|&nbsp; Akademik</div>
+        </div>
+      </div>
+      <div class="news-list-item">
+        <div class="news-list-img" style="background: linear-gradient(135deg,#f5f5f5,#e0e0e0); font-size:28px;">🏛️</div>
+        <div class="news-list-content">
+          <div class="news-list-title">Pemaparan Materi Kurikulum OBE Prodi IP dan MIP FISIP Unjani</div>
+          <div class="news-list-meta">📅 29 November 2025 &nbsp;|&nbsp; Akademik</div>
+        </div>
+      </div>
+      <div class="news-list-item">
+        <div class="news-list-img" style="background: linear-gradient(135deg,#f5f5f5,#e0e0e0); font-size:28px;">⚖️</div>
+        <div class="news-list-content">
+          <div class="news-list-title">FISIP Unjani dan Fakultas Hukum Berkolaborasi dalam Seminar Nasional Hukum Tata Negara</div>
+          <div class="news-list-meta">📅 13 Agustus 2025 &nbsp;|&nbsp; Kegiatan</div>
+        </div>
+      </div>
+      <div class="news-list-item">
+        <div class="news-list-img" style="background: linear-gradient(135deg,#f5f5f5,#e0e0e0); font-size:28px;">🎓</div>
+        <div class="news-list-content">
+          <div class="news-list-title">Rapat Evaluasi Kurikulum Program Studi Ilmu Hubungan Internasional dan MHI FISIP Unjani</div>
+          <div class="news-list-meta">📅 28 November 2025 &nbsp;|&nbsp; Akademik</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Research & PKM Section -->
+    <div class="section-header" style="margin-top: 32px;">
+      <span class="section-title">Penelitian &amp; PKM</span>
+      <a href="#" class="section-more">Lihat Semua →</a>
+    </div>
+    <div class="news-list">
+      <div class="news-list-item">
+        <div class="news-list-img" style="background: linear-gradient(135deg,#f5f5f5,#dde); font-size:28px;">🔬</div>
+        <div class="news-list-content">
+          <div class="news-list-title">Dosen FISIP Unjani Raih Hibah Penelitian Nasional dari DIKTI 2025</div>
+          <div class="news-list-meta">📅 Oktober 2025 &nbsp;|&nbsp; Penelitian</div>
+        </div>
+      </div>
+      <div class="news-list-item">
+        <div class="news-list-img" style="background: linear-gradient(135deg,#f5f5f5,#dde); font-size:28px;">🏘️</div>
+        <div class="news-list-content">
+          <div class="news-list-title">Program PKM FISIP Unjani di Desa Binaan Kabupaten Bandung Barat Berjalan Sukses</div>
+          <div class="news-list-meta">📅 September 2025 &nbsp;|&nbsp; Pengabdian</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <!-- Quick Links -->
+    <div class="widget">
+      <div class="widget-header">Akses Cepat</div>
+      <div class="widget-body">
+        <div class="quick-links">
+          <div class="quick-link">
+            <div class="ql-icon">🎓</div>
+            <span>Siterpadu</span>
+          </div>
+          <div class="quick-link">
+            <div class="ql-icon">📖</div>
+            <span>E-Learning</span>
+          </div>
+          <div class="quick-link">
+            <div class="ql-icon">📄</div>
+            <span>E-Journal</span>
+          </div>
+          <div class="quick-link">
+            <div class="ql-icon">📅</div>
+            <span>Kalender Akad.</span>
+          </div>
+          <div class="quick-link">
+            <div class="ql-icon">💰</div>
+            <span>Beasiswa</span>
+          </div>
+          <div class="quick-link">
+            <div class="ql-icon">📋</div>
+            <span>Download Form</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agenda -->
+    <div class="widget">
+      <div class="widget-header">Agenda &amp; Kegiatan</div>
+      <div class="widget-body">
+        <div class="event-item">
+          <div class="event-date-box">
+            <div class="event-day">20</div>
+            <div class="event-month">Mar</div>
+          </div>
+          <div class="event-info">
+            <div class="event-title">Seminar Nasional Ilmu Pemerintahan 2026</div>
+            <div class="event-place">📍 Aula Gedung FISIP Unjani</div>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-date-box">
+            <div class="event-day">25</div>
+            <div class="event-month">Mar</div>
+          </div>
+          <div class="event-info">
+            <div class="event-title">Workshop Penulisan Karya Ilmiah Mahasiswa</div>
+            <div class="event-place">📍 Ruang Seminar Lt. 3</div>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-date-box">
+            <div class="event-day">10</div>
+            <div class="event-month">Apr</div>
+          </div>
+          <div class="event-info">
+            <div class="event-title">Kuliah Tamu Hubungan Internasional – Pakar ASEAN</div>
+            <div class="event-place">📍 Ruang Sidang HI</div>
+          </div>
+        </div>
+        <div class="event-item">
+          <div class="event-date-box">
+            <div class="event-day">17</div>
+            <div class="event-month">Apr</div>
+          </div>
+          <div class="event-info">
+            <div class="event-title">Sidang Terbuka Wisuda Sarjana &amp; Pascasarjana</div>
+            <div class="event-place">📍 Auditorium Unjani</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pengumuman -->
+    <div class="widget">
+      <div class="widget-header">Pengumuman</div>
+      <div class="widget-body">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a href="#" style="display:flex; gap:8px; padding:8px; border:1px solid var(--border); border-radius:4px; font-size:12px; color:#333; transition:background 0.2s; line-height:1.4;" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background=''">
+            <span style="color:var(--red);font-size:16px;flex-shrink:0;">📢</span>
+            <span>Jadwal UAS Semester Genap TA 2025/2026 Prodi Ilmu Pemerintahan</span>
+          </a>
+          <a href="#" style="display:flex; gap:8px; padding:8px; border:1px solid var(--border); border-radius:4px; font-size:12px; color:#333; transition:background 0.2s; line-height:1.4;" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background=''">
+            <span style="color:var(--red);font-size:16px;flex-shrink:0;">📢</span>
+            <span>Pengumpulan KRS Genap 2025/2026 dibuka mulai 18 Maret 2026</span>
+          </a>
+          <a href="#" style="display:flex; gap:8px; padding:8px; border:1px solid var(--border); border-radius:4px; font-size:12px; color:#333; transition:background 0.2s; line-height:1.4;" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background=''">
+            <span style="color:var(--red);font-size:16px;flex-shrink:0;">📢</span>
+            <span>Pendaftaran Sidang Skripsi Semester Genap 2025/2026 dibuka</span>
+          </a>
+          <a href="#" style="display:flex; gap:8px; padding:8px; border:1px solid var(--border); border-radius:4px; font-size:12px; color:#333; transition:background 0.2s; line-height:1.4;" onmouseover="this.style.background='#f5f5f5'" onmouseout="this.style.background=''">
+            <span style="color:var(--red);font-size:16px;flex-shrink:0;">📢</span>
+            <span>Penerimaan Mahasiswa Baru S1 &amp; S2 FISIP Unjani TA 2026/2027</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery Widget -->
+    <div class="widget">
+      <div class="widget-header">Galeri Foto</div>
+      <div class="widget-body">
+        <div class="gallery-grid">
+          <div class="gallery-thumb" style="background: linear-gradient(135deg,#c0392b,#1a2744);">🌏</div>
+          <div class="gallery-thumb" style="background: linear-gradient(135deg,#1a2744,#c0392b);">🎓</div>
+          <div class="gallery-thumb" style="background: linear-gradient(135deg,#96281b,#2c3e50);">🏛️</div>
+          <div class="gallery-thumb" style="background: linear-gradient(135deg,#2c3e50,#96281b);">🤝</div>
+          <div class="gallery-thumb" style="background: linear-gradient(135deg,#c0392b,#2c3e50);">📖</div>
+          <div class="gallery-thumb" style="background: linear-gradient(135deg,#1a2744,#96281b);">🔬</div>
+        </div>
+        <a href="#" style="display:block; margin-top:10px; text-align:center; font-size:12px; color:var(--red); font-weight:600;">Lihat Semua Foto →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAM STUDI SECTION -->
+<div class="prodi-section">
+  <div class="prodi-inner">
+    <div class="section-header">
+      <span class="section-title">Program Studi</span>
+      <a href="#" class="section-more">Info Lebih Lanjut →</a>
+    </div>
+    <div class="prodi-grid">
+      <div class="prodi-card">
+        <div class="prodi-icon">🏛️</div>
+        <div class="prodi-name">Ilmu Pemerintahan</div>
+        <div class="prodi-level">Sarjana (S1)</div>
+        <div class="prodi-accred">Akreditasi B</div>
+      </div>
+      <div class="prodi-card">
+        <div class="prodi-icon">🌐</div>
+        <div class="prodi-name">Ilmu Hubungan Internasional</div>
+        <div class="prodi-level">Sarjana (S1)</div>
+        <div class="prodi-accred">Akreditasi B</div>
+      </div>
+      <div class="prodi-card">
+        <div class="prodi-icon">⚖️</div>
+        <div class="prodi-name">Magister Ilmu Pemerintahan</div>
+        <div class="prodi-level">Pascasarjana (S2)</div>
+        <div class="prodi-accred">Terakreditasi</div>
+      </div>
+      <div class="prodi-card">
+        <div class="prodi-icon">🤝</div>
+        <div class="prodi-name">Magister Hubungan Internasional</div>
+        <div class="prodi-level">Pascasarjana (S2)</div>
+        <div class="prodi-accred">Terakreditasi</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DEAN WELCOME -->
+<div class="dean-section">
+  <div class="dean-inner">
+    <div class="dean-photo">👩‍💼</div>
+    <div class="dean-content">
+      <span class="dean-label">Sambutan Dekan</span>
+      <div class="dean-title">Dr. Agustina Setiawan, S.IP., M.Si</div>
+      <div class="dean-subtitle">Dekan Fakultas Ilmu Sosial dan Ilmu Politik – Universitas Jenderal Achmad Yani</div>
+      <p class="dean-text">
+        Selamat datang di website resmi Fakultas Ilmu Sosial dan Ilmu Politik (FISIP) Universitas Jenderal Achmad Yani. 
+        FISIP Unjani terus berkomitmen untuk menghasilkan lulusan yang berkompeten, berkarakter, dan berdaya saing 
+        di tingkat nasional maupun internasional. Kami senantiasa berinovasi dalam bidang pendidikan, penelitian, 
+        dan pengabdian kepada masyarakat sebagai wujud Tri Dharma Perguruan Tinggi.
+      </p>
+      <a href="#" class="dean-btn">Baca Selengkapnya</a>
+    </div>
+  </div>
+</div>
+
+<!-- RELATED LINKS BAR -->
+<div class="related-links-bar">
+  <div class="related-links-inner">
+    <span class="related-links-label">🔗 Link Terkait:</span>
+    <a href="#" class="related-link-btn">📰 E-Journal FISIP</a>
+    <a href="#" class="related-link-btn">🌐 Website Unjani</a>
+    <a href="#" class="related-link-btn">🎓 BAA Unjani</a>
+    <a href="#" class="related-link-btn">📝 PMB Unjani</a>
+    <a href="#" class="related-link-btn">🏛️ DIKTI</a>
+    <a href="#" class="related-link-btn">📋 LLDIKTI IV Jabar Banten</a>
+    <a href="#" class="related-link-btn">📊 Siterpadu</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+<img decoding="async" src="http://fisip.unjani.ac.id/wp-content/uploads/2024/06/cropped-cropped-Logo-fisip_art_favicon.png" style="width:120px;height:69px" alt="FISIP Unjani"></a>
+          <div>
+            <div class="footer-name">
+              FISIP Unjani
+              <small>Universitas Jenderal Achmad Yani</small>
+            </div>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Fakultas Ilmu Sosial dan Ilmu Politik Universitas Jenderal Achmad Yani berkomitmen mencetak lulusan 
+          berkualitas di bidang ilmu sosial, politik, dan hubungan internasional.
+        </p>
+        <div class="footer-social">
+          <div class="social-btn" title="Facebook">f</div>
+          <div class="social-btn" title="Instagram">in</div>
+          <div class="social-btn" title="Twitter/X">𝕏</div>
+          <div class="social-btn" title="YouTube">▶</div>
+          <div class="social-btn" title="LinkedIn">li</div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Tentang Kami</div>
+        <ul class="footer-links">
+          <li><a href="#">Profil Fakultas</a></li>
+          <li><a href="#">Visi &amp; Misi</a></li>
+          <li><a href="#">Pimpinan Fakultas</a></li>
+          <li><a href="#">Struktur Organisasi</a></li>
+          <li><a href="#">Dosen</a></li>
+          <li><a href="#">Tenaga Kependidikan</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Mahasiswa</div>
+        <ul class="footer-links">
+          <li><a href="#">Siterpadu</a></li>
+          <li><a href="#">E-Learning</a></li>
+          <li><a href="#">Kalender Akademik</a></li>
+          <li><a href="#">Download Form</a></li>
+          <li><a href="#">Beasiswa</a></li>
+          <li><a href="#">Galeri Foto</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Kontak</div>
+        <div class="footer-contact-item">
+          <span>📍</span>
+          <span>Jl. Terusan Jend. Sudirman, Cimahi, Jawa Barat 40531</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>📞</span>
+          <span>(022) 6650645</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>✉</span>
+          <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c3a3A5zqsqA4mY21zHRJZCyZNqiaeSTJfq6Tj">[email&#160;protected]</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span>🌐</span>
+          <span>fisip.unjani.ac.id</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    Copyright &copy; 2026 <a href="#">FISIP | Universitas Jenderal Achmad Yani</a>. All Rights Reserved.
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Slider
+  let current = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.slider-dot');
+  function goSlide(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  function nextSlide() { goSlide(current + 1); }
+  function prevSlide() { goSlide(current - 1); }
+  setInterval(nextSlide, 5000);
+
+  // Date display (Indonesian)
+  const days = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sab
